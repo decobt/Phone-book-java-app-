@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 public class Prozorec extends JFrame{
 	JLabel l1,l2,l3,l4,l5;
 	JTextField t1,t2,t3,t4;
-	JButton vnes,pregled;
+	JButton vnes,pregled,izlez;
 	JRadioButton rb1,rb2;
 	
 	public Prozorec(){
@@ -67,10 +67,13 @@ public class Prozorec extends JFrame{
 		t4.setBounds(160,90 , 100, 20);
 		p.add(t4);
 		vnes=new JButton("Vnesi");
-		vnes.setBounds(160,130 , 100, 30);
+		vnes.setBounds(30,130 , 100, 30);
 		p.add(vnes);
+		izlez=new JButton("Izlez");
+		izlez.setBounds(270,130,100,30);
+		p.add(izlez);
 		pregled=new JButton("Pregled");
-		pregled.setBounds(270,130 , 100, 30);
+		pregled.setBounds(160,130 , 100, 30);
 		pregled.setToolTipText("Pregled i prebaruvanje na vnesenite zapisi vo imenikot");
 		p.add(pregled);
 		setContentPane(p);
@@ -78,6 +81,7 @@ public class Prozorec extends JFrame{
 		event a= new event();
 		vnes.addActionListener(a);
 		pregled.addActionListener(a);
+		izlez.addActionListener(a);
 	}
 	
 	public class event implements ActionListener{
@@ -121,6 +125,10 @@ public class Prozorec extends JFrame{
 			Pregled nov=new Pregled();
 			nov.setVisible(true);	
 			setVisible(false);
+			}
+			else if(op.equals("Izlez")){
+				dispose();
+		        System.exit(0);
 			}
 		}
 	}
