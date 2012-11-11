@@ -1,0 +1,42 @@
+Ime: Trajce
+Prezime: Roskoski
+Pol: maski 
+Grad: Bitola
+Tel: 228644
+-----------------------------------------------------
+Ime: Kate
+Prezime: Vasileva
+Pol: zenski 
+Grad: Ohrid
+Tel: 245689
+-----------------------------------------------------
+Ime: Trajce
+Prezime: Roskoski
+Pol: maski 
+Grad: Prilep
+Tel: 459812
+-----------------------------------------------------
+Ime: Anita
+Prezime: Gjorevska
+Pol: zenski 
+Grad: Veles
+Tel: 312356
+-----------------------------------------------------
+Ime: Vladimir
+Prezime: Gjorevski
+Pol: maski 
+Grad: Struga
+Tel: 255236
+-----------------------------------------------------
+Ime: Menka
+Prezime: Vasileva
+Pol: zenski 
+Grad: Veles
+Tel: 321654
+-----------------------------------------------------
+Ime: Gordana
+Prezime: Stavrevska
+Pol: zenski 
+Grad: Tetovo
+Tel: 234565
+-----------------------------------------------------
