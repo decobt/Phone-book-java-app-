@@ -55,6 +55,50 @@ public class Pregled extends JFrame {
 		getContentPane().add(p2,BorderLayout.SOUTH);
 		getContentPane().add(p1,BorderLayout.NORTH);
 		
+		event a= new event();
+		baraj.addActionListener(a);
+		nazad.addActionListener(a);
 		
+	}
+	
+	public class event implements ActionListener{
+		public void actionPerformed(ActionEvent a) {
+			String op=a.getActionCommand();
+			JFrame frame = new JFrame("Show Message Dialog");
+			
+			if(op.equals("Baraj")){
+				try{
+				String s; int index,uslov = 0;
+				lista.setText(null);
+				
+				FileReader record=new FileReader("imenik.txt");
+				BufferedReader in=new BufferedReader(record);
+				
+				while((s=in.readLine())!=null){
+	            if(vnes.getText().equals("")) {
+	            JOptionPane.showMessageDialog(frame,"Ve molime vnesete podatok za baranje!");uslov=1;break;}
+				index = s.indexOf(vnes.getText());
+				if(index!=-1 && index==5)
+				{  			uslov=1;
+					        lista.setText(lista.getText()+s+"\n");
+							for(int i=0;i<5;i++)
+							{lista.setText(lista.getText()+in.readLine()+"\n");}	
+				}
+}
+				if(uslov==0){
+		        		JOptionPane.showMessageDialog(frame,"Ne se pronajdeni podatoci!");	
+						}
+					in.close();
+				    }
+					catch (IOException e){
+						JOptionPane.showMessageDialog(frame,"Podatocite ne se procitani!");
+					}
+			}
+			else if(op.equals("Nazad")){
+			setVisible(false);
+			Prozorec nov=new Prozorec();
+			nov.setVisible(true);
+			}
+		}
 	}
 }
