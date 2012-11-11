@@ -75,5 +75,53 @@ public class Prozorec extends JFrame{
 		p.add(pregled);
 		setContentPane(p);
 		
-		
-}}
+		event a= new event();
+		vnes.addActionListener(a);
+		pregled.addActionListener(a);
+	}
+	
+	public class event implements ActionListener{
+		public void actionPerformed(ActionEvent a) { int t=0;
+			String op=a.getActionCommand();
+			JFrame frame = new JFrame("Show Message Dialog");
+			
+			if(op.equals("Vnesi")){
+			try{ t=0;
+			
+			FileWriter record=new FileWriter("imenik.txt",true);
+			BufferedWriter out=new BufferedWriter(record);
+			
+			if(t1.getText().equals("") || t2.getText().equals("") || t3.getText().equals("") || t4.getText().equals("")) {t=1;
+			JOptionPane.showMessageDialog(frame,"Ve molam popolnete gi site polinja!");
+			}
+			
+			if (rb1.isSelected()==true && t==0){
+			out.write("Ime: "+t1.getText()+"\r\n"+"Prezime: "+t2.getText()+"\r\nPol: maski \r\nGrad: "+t3.getText()+"\r\nTel: "+t4.getText()+"\r\n");
+			out.write("-----------------------------------------------------\r\n");
+			out.close();
+			JOptionPane.showMessageDialog(frame,"Podatocite se vneseni!");
+			t1.setText("");t2.setText("");t3.setText("");t4.setText("");rb1.setSelected(true);
+			}
+			
+			else if(rb2.isSelected()==true && t==0){
+				out.write("Ime: "+t1.getText()+"\r\n"+"Prezime: "+t2.getText()+"\r\nPol: zenski \r\nGrad: "+t3.getText()+"\r\nTel: "+t4.getText()+"\r\n");
+				out.write("-----------------------------------------------------\r\n");
+				out.close();	
+				JOptionPane.showMessageDialog(frame,"Podatocite se vneseni!");
+				t1.setText("");t2.setText("");t3.setText("");t4.setText("");rb1.setSelected(true);
+				}
+			}
+			catch (IOException e){
+				JOptionPane.showMessageDialog(frame,"Podatocite ne se vneseni!");
+			}
+			
+			}
+			
+			else if(op.equals("Pregled")){
+			Pregled nov=new Pregled();
+			nov.setVisible(true);	
+			setVisible(false);
+			}
+		}
+	}
+}
