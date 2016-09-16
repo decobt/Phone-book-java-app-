@@ -1,8 +1,5 @@
-Telefonski_Imenik
+Phone book app
 =================
 
-Za izrabotka na Telefonskiot Imenik koristena e Eclipse IDE i so pomos na GitHub e napraven repositor.
-
-Telefonskiot imenik ovozmozuva da se vnesuvaat novi zapisi vo imenikot, da se pregleduvaat veke vnesenite 
-zapisi vo imenikot i da se prebaruva imenikot so cel da se najdi nekoj zapis. Site vneseni zapisi se 
-zacuvuvaat vo "imenik.txt".
+This is a java application made with Eclipse IDE.
+The phone book app allows the user to add phone record or search previously added record. All records are saved in text file named imenik.txt.
